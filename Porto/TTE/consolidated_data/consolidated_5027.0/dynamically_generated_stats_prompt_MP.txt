@@ -1,0 +1,5 @@
+Relevant trajectory information:
+- Last 5 points direction: Northwest (bearing: 135.10°)
+- Last 10 points speed trend: stable speed
+
+- Road segment ID for the last points: 4734

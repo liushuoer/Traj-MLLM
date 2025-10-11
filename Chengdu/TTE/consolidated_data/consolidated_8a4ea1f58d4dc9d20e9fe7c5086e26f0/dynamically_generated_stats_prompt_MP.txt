@@ -1,0 +1,5 @@
+Relevant trajectory information:
+- Last 5 points direction: Northeast (bearing: 29.09°)
+- Last 10 points speed trend: decelerating
+
+- Road segment ID for the last points: 87096

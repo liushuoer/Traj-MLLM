@@ -1,0 +1,41 @@
+Below is a detailed, segment‐by‐segment breakdown of our analysis and predicted times, followed by the final ETA for the entire trajectory.
+
+Segment 1 (Start: Ziqiang West Road – Beidajie/Lianhu Road, 1 441.86 m, depart 2016-11-21 20:42:12)
+a. Influencing‐Factor Analysis  
+• Road type & speed regime:  
+  - The segment consists of a standard primary urban arterial, 2×2 lanes, posted 50 km/h. After the evening peak, traffic is smooth and flows well.  
+  - The practical average speed is about 40 km/h (11.11 m/s), factoring in brief slowdowns for signals and potential minor lane changes or access maneuvers.  
+• Signal impact:  
+  - There are actually only 2 traffic signals along this segment.  
+  - In off-peak hours, main-road signals have moderate cycles, with an average total delay (including deceleration/acceleration) of about 25 seconds per signal.  
+b. Predicted travel time  
+  - Running time: 1 441.86 m ÷ 11.11 m/s ≈ 130 s  
+  - Signal delay: 2 × 25 s = 50 s  
+  - Total ≈ 180 s  
+c. Predicted average speed  
+  - 1 441.86 m ÷ 180 s ≈ 8.01 m/s  
+d. Segment 1 ETA  
+  - 2016-11-21 20:42:12 + 180 s = 2016-11-21 20:45:12  
+
+––––––––––––––––––––––––––––––––––––––––––––––––––  
+Segment 2 (Beidajie/Lianhu Road – Destination, 2 896.80 m, depart 2016-11-21 20:45:12)
+a. Influencing‐Factor Analysis  
+• Road type & average speed:  
+  - Lianhu Road is a major urban arterial, 2×2 lanes, posted at 50 km/h. At night, there’s no congestion, but frequent signals and several large intersections cause significant speed variation.  
+  - For the entire segment, a realistic average travel speed is 35 km/h (9.72 m/s), reflecting the impact of frequent stop-start cycles and busy major junctions.  
+• Signal impact:  
+  - There are 9 traffic signals along the segment; 3 of them are large major intersections, each with an average delay of about 35 s, and the remainder with 22 s each.  
+  - Accounting also for extra minor delays due to repeated stop/go, the weighted average signal delay is about 27 s per signal.  
+b. Predicted travel time  
+  - Running time: 2 896.80 m ÷ 9.72 m/s ≈ 298 s  
+  - Signal delay: 9 × 27 s = 243 s  
+  - Total ≈ 541 s  
+c. Predicted average speed  
+  - 2 896.80 m ÷ 541 s ≈ 5.36 m/s  
+d. Segment 2 ETA  
+  - 2016-11-21 20:45:12 + 541 s = 2016-11-21 20:54:13  
+
+––––––––––––––––––––––––––––––––––––––––––––––––––  
+Overall Trajectory  
+Total predicted travel time = 180 s + 541 s = 721 s (12 min 1 s)  
+Final ETA = 2016-11-21 20:42:12 + 721 s = <<<2016-11-21 20:54:13>>>  

@@ -1,0 +1,33 @@
+**The trajectory is segmented based on approximate uniformity in traffic semantics. **
+** Below are details for the 2 segments of this trajectory, each with statistical information and corresponding visual data: **
+
+**Segment 1:**
+*   **Visuals:**
+    *   `image1` (Shows segment path, POIs, signalized intersections)
+    *   `image2` (Illustrates road class, lanes, network structure)
+*   **Segment Stats:**
+    *   **Start Time: 2016-11-21 20:42:12 **
+    *   **Distance (meters): 1441.8567 meters **
+
+**Segment 2:**
+*   **Visuals:**
+    *   `image3` (Shows segment path, POIs, signalized intersections)
+    *   `image4` (Illustrates road class, lanes, network structure)
+*   **Segment Stats:**
+    *   **Distance (meters): 2896.8036 meters **
+
+
+**Trajectory End-Point Information:**
+* **Visuals:**
+    * `last_trajectory_view` (A zoomed-in image of the last few points, marked with red dots, with the green line representing the trajectory)
+* **Stats:**
+    * Overall direction of the last five points: East (Azimuth: 90.18°)
+    * Movement trend of the last ten points: Slow down
+    
+    ---
+
+**Overall Trajectory Visuals:**
+* **Visuals:**
+    * `poi_full_image` (Comprehensive view of the entire trajectory with POIs and signalized intersections)
+    * `road_structure_full_image` (Detailed illustration of the full trajectory's road class, lanes, and network structure)
+    

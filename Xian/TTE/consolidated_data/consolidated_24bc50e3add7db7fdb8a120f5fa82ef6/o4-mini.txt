@@ -1,0 +1,70 @@
+Below is the requested, fully‐stepwise ETA calculation.  In everything that follows, we have deliberately ignored the “Trajectory End‐Point Information” (images and stats) per your instructions, and relied only on the segmented and global POI/road‐network maps.
+
+1. Segment 1  
+   a. Influencing‐Factor Analysis  
+      - Road hierarchy/class: major urban arterial (blue line density high, 4-6 through lanes, partially grade–separated at a clover interchange).  
+      - Time‐of‐day: 14:36 – just past lunch, off‐peak but not free‐flow.  
+      - Signalized intersections: 2 at‐grade traffic lights along the 2.44 km stretch (the clover is grade‐separated and does not introduce a stop).  
+      - Estimated free‐flow speed: v₁ = 15 m/s (~54 km/h)  
+      - Average per‐signal delay (off–peak, arterial): Δt₁ = 30 s  
+
+   b. Predicted Travel Time  
+      motion_time₁ = distance₁ / v₁ = 2 443.17 m ÷ 15 m/s = 162.9 s  
+      delay₁      = 2 signals × 30 s/signal = 60.0 s  
+      total_time₁ = 162.9 + 60.0 ≈ 223 s  
+
+   c. Predicted Average Speed  
+      avg_v₁ = distance₁ ÷ total_time₁ = 2 443.17 m ÷ 223 s ≈ 10.95 m/s  
+
+   d. Segment ETA  
+      start₁ = 2016-11-21 14:36:12  
+      end₁   = start₁ + 223 s = 2016-11-21 14:39:55  
+
+2. Segment 2  
+   a. Influencing‐Factor Analysis  
+      - Road hierarchy/class: primary urban arterial (blue lines moderate density, 4 through lanes).  
+      - Time‐of‐day: continuous off‐peak.  
+      - Signalized intersections: 4 at‐grade traffic lights (based on POI map).  
+      - Estimated free‐flow speed: v₂ = 12 m/s (~43 km/h)  
+      - Average per‐signal delay: Δt₂ = 35 s  
+
+   b. Predicted Travel Time  
+      motion_time₂ = distance₂ / v₂ = 1 453.02 m ÷ 12 m/s = 121.1 s  
+      delay₂       = 4 signals × 35 s/signal = 140.0 s  
+      total_time₂  = 121.1 + 140.0 ≈ 261 s  
+
+   c. Predicted Average Speed  
+      avg_v₂ = distance₂ ÷ total_time₂ = 1 453.02 m ÷ 261 s ≈ 5.57 m/s  
+
+   d. Segment ETA  
+      start₂ = end₁ = 2016-11-21 14:39:55  
+      end₂   = start₂ + 261 s = 2016-11-21 14:44:16  
+
+3. Segment 3  
+   a. Influencing‐Factor Analysis  
+      - Road hierarchy/class: local collector (blue lines sparse, 2 through lanes).  
+      - Adjacent POIs: large mall and park → moderate turning traffic.  
+      - Signalized intersections: 2 at‐grade lights.  
+      - Estimated free‐flow speed: v₃ = 8 m/s (~29 km/h)  
+      - Average per‐signal delay: Δt₃ = 50 s  
+
+   b. Predicted Travel Time  
+      motion_time₃ = distance₃ / v₃ = 1 039.51 m ÷ 8 m/s = 129.9 s  
+      delay₃       = 2 signals × 50 s/signal = 100.0 s  
+      total_time₃  = 129.9 + 100.0 ≈ 230 s  
+
+   c. Predicted Average Speed  
+      avg_v₃ = distance₃ ÷ total_time₃ = 1 039.51 m ÷ 230 s ≈ 4.52 m/s  
+
+   d. Segment ETA  
+      start₃ = end₂ = 2016-11-21 14:44:16  
+      end₃   = start₃ + 230 s = 2016-11-21 14:48:06  
+
+Final, end‐of‐trajectory ETA:  
+<<<2016-11-21 14:48:06>>>
+
+Justification Summary:  
+- We split the 5 km+ route into three semantically uniform segments, identified road class from map blue‐line density, and counted only the signalized intersections visible on the POI maps.  
+- For each segment we chose a realistic off‐peak free‐flow speed (15/12/8 m/s) and assigned per‐signal average delay (30/35/50 s) based on signal complexity and road hierarchy.  
+- We computed motion time = distance ÷ speed, added total stop delay = (# signals) × (per‐signal delay), and summed to get each segment’s total travel time.  
+- Segment ETAs cascade from the known departure time (2016-11-21 14:36:12). The resulting overall ETA is <<<2016-11-21 14:48:06>>>.

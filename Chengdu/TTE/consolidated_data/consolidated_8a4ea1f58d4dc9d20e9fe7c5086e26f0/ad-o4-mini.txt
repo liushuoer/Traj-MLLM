@@ -1,0 +1,14 @@
+Final Judgment: Normal
+
+Reasoning:
+1. Overall Assessment  
+   The entire trajectory follows the mapped road network closely, without any clear parallel offsets or excursions into non-road areas. Even through complex interchanges and on smaller local streets, the green trajectory line remains coincident with the blue road lines.
+
+2. Evidence Analysis  
+   - In the Road Network View of the main east–west segment (image 4 and the first zoomed segment image 5), the bright green line traces exactly along the dual carriageways of 北三环路二段, matching both directions and ramp connections.  
+   - In the north–south trunk section (image 6), the trajectory hugs the central divider of the main thoroughfare, aligning perfectly with each red node at intersections. There are no lateral shifts.  
+   - At the large interchange at 凤凰立交 (image 7), both on- and off-ramps are followed accurately, with the green line weaving through exactly the same geometry as the thin blue lines.  
+   - In the final local street section (image 9), the trajectory switches onto smaller roads (荷花池街道 and adjacent streets) and remains on those roads without straying into buildings or open areas. All red nodes correspond to real intersections that the green line traverses.
+
+3. Conclusion  
+   Because every examined segment—in global and detailed road network views—shows the trajectory adhering tightly to the underlying blue road geometry (including complex interchanges and minor streets), there is no evidence of geometric translation or abnormal offset. The trajectory is therefore classified as Normal.

@@ -1,0 +1,23 @@
+Analysis:
+
+1. Trajectory alignment and motion context  
+- The last five sampled points (red dots) lie squarely on the NE-bound carriageway of road segment 2059, and the green “observed” track shows an uninterrupted straight‐through path across the upcoming intersection.  
+- The bearing (≈40.7°) matches the orientation of that same NE-bound segment, and the speed profile is accelerating, with no evidence of braking or lateral deviation that would signal an imminent turn.  
+
+2. Road network topology at the junction  
+- Road 2059 continues straight through the intersection onto its own NE extension (same ID).  
+- Two left‐turn slip‐lanes branch off to the NW: segment IDs 72001 (inner lane) and 72035 (outer lane).  
+- Two right‐turn lanes head SE away from the junction: segment IDs 103608 and 103609.  
+- There is also a minor NE slip‐lane (ID 103607) immediately adjacent to the main carriageway, but it carries lower traffic volume than the through lanes.  
+
+3. Top‐1 prediction rationale  
+- Given the strong, straight‐ahead bearing, continuing acceleration, and absence of any lateral offset, the most likely continuation is straight on the same segment (2059).  
+
+4. Alternative plausible maneuvers (Top‐5 runner-ups)  
+- Left‐turn (NW) onto 72001 or 72035  
+- Right‐turn (SE) onto 103608 or 103609  
+- Minor straight slip onto 103607  
+
+Final prediction:
+1. Top-1 prediction: <<<104997>>>
+2. Top-5 candidates: [[[72001,72035,103608,103609,103607]]]

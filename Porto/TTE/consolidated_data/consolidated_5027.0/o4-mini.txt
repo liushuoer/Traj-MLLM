@@ -1,0 +1,71 @@
+Below is a detailed, segment‐by‐segment breakdown of our analysis and predicted times, followed by the final ETA for the entire trajectory.
+
+Segment 1  
+a. Influencing-factor analysis  
+• Road class & geometry: Inner-city connector streets around Trindade station, single carriageway (one lane each direction), posted 30 km/h. Blue-line density is minor urban artery with frequent access.  
+• Morning-peak (07:30–09:00) in Porto city-centre is “moderate & flowing,” with signals well-coordinated and minimal queuing. Effective running speed slightly higher than prior estimate: 23 km/h (6.39 m/s), about 75% of the posted limit given local experience.  
+• Signalized intersections: 4 signals, all reasonably responsive; average delay per light: 8 s.  
+b. Predicted travel time  
+  – Running time: 742.27 m / 6.39 m/s ≈ 116 s  
+  – Signal delay: 4 × 8 s = 32 s  
+  – Total segment time ≈ 148 s  
+c. Predicted average speed  
+  – 742.27 m / 148 s ≈ 5.02 m/s  
+d. Segment ETA  
+  – Start: 2013-07-02 00:38:52  
+  – End: 2013-07-02 00:41:20  
+
+––––––––––––––––––––––––––––––––––  
+Segment 2  
+a. Influencing-factor analysis  
+• Road class & geometry: Rua de Faria Guimarães → Rua de Camões corridor, primary one-way arterial, 2+2 lanes, posted 50 km/h.  
+• Morning peak, with mainline green-waves; running speed achievable up to 42 km/h (11.67 m/s).  
+• Signalized intersections: 10, but most well-timed; average effective delay just 8 s each.  
+b. Predicted travel time  
+  – Running time: 2 069.82 m / 11.67 m/s ≈ 177 s  
+  – Signal delay: 10 × 8 s = 80 s  
+  – Total segment time ≈ 257 s  
+c. Predicted average speed  
+  – 2 069.82 m / 257 s ≈ 8.06 m/s  
+d. Segment ETA  
+  – Start: 2013-07-02 00:41:20  
+  – End: 2013-07-02 00:45:37  
+
+––––––––––––––––––––––––––––––––––  
+Segment 3  
+a. Influencing-factor analysis  
+• Road class & geometry: Rua da Constituição, actually a narrow, single-lane one-way street in this section, posted 40 km/h.  
+• Local morning flow is brisk but interrupted by frequent stops; use 27 km/h (7.5 m/s) as effective speed.  
+• Signalized intersections: 8 total, with short effective cycle times; average delay per signal 7 s.  
+b. Predicted travel time  
+  – Running time: 1 554.40 m / 7.5 m/s ≈ 207 s  
+  – Signal delay: 8 × 7 s = 56 s  
+  – Total segment time ≈ 263 s  
+c. Predicted average speed  
+  – 1 554.40 m / 263 s ≈ 5.91 m/s  
+d. Segment ETA  
+  – Start: 2013-07-02 00:45:37  
+  – End: 2013-07-02 00:49:00  
+
+––––––––––––––––––––––––––––––––––  
+Segment 4  
+a. Influencing-factor analysis  
+• Mixed profile:  
+  – 4A (≈1 000 m): Avenida Conselhos da Europa, single-lane, one-way local collector, posted 40 km/h. Realistic morning peak travel speed: 28 km/h (7.78 m/s). 2 signals at 8 s each.  
+  – 4B (≈599 m): Off-ramp + residential connectors, posted 30–40 km/h, limited capacity; effective speed 20 km/h (5.56 m/s). 3 signals at 8 s each.  
+b. Predicted travel time  
+  – 4A run: 1 000 m / 7.78 m/s ≈ 129 s  
+  – 4A delay: 2 × 8 s = 16 s → sub-total 145 s  
+  – 4B run: 599 m / 5.56 m/s ≈ 108 s  
+  – 4B delay: 3 × 8 s = 24 s → sub-total 132 s  
+  – Total segment time ≈ 145 + 132 = 277 s  
+c. Predicted average speed  
+  – 1 598.90 m / 277 s ≈ 5.77 m/s  
+d. Segment ETA  
+  – Start: 2013-07-02 00:49:00  
+  – End: 2013-07-02 00:53:37  
+
+––––––––––––––––––––––––––––––––––  
+Overall trajectory  
+a. Final ETA prediction  
+  <<<2013-07-02 00:53:37>>>  

@@ -1,0 +1,67 @@
+**The trajectory is segmented based on approximate uniformity in traffic semantics. **
+** Below are details for the 4 segments of this trajectory, each with statistical information and corresponding visual data: **
+
+**Segment 1:**
+*   **Visuals:**
+    *   `image1` (Shows segment path, POIs, signalized intersections)
+    *   `image2` (Illustrates road class, lanes, network structure)
+*   **Segment Stats:**
+    *   **Start Time: 2009-05-05 16:47:04 **
+    *   **End Time: 2009-05-05 16:55:24 **
+    *   **Duration (minutes): 8.33 **
+    *   **Total Distance (meters): 1674.7086916820688 **
+    *   **Average Speed (m/s): 3.3494173833641376 **
+    *   **Maximum Speed (m/s): 17.772525971124185 **
+    *   **Minimum Speed (m/s): 0.0 **
+    *   **Maximum Acceleration (m/s²): 1.5070456293628707 **
+
+**Segment 2:**
+*   **Visuals:**
+    *   `image3` (Shows segment path, POIs, signalized intersections)
+    *   `image4` (Illustrates road class, lanes, network structure)
+*   **Segment Stats:**
+    *   **Start Time: 2009-05-05 16:55:28 **
+    *   **End Time: 2009-05-05 17:05:19 **
+    *   **Duration (minutes): 9.85 **
+    *   **Total Distance (meters): 8937.740955864385 **
+    *   **Average Speed (m/s): 15.12308114359456 **
+    *   **Maximum Speed (m/s): 30.433567375330046 **
+    *   **Minimum Speed (m/s): 0.0 **
+    *   **Maximum Acceleration (m/s²): 2.0764968953020086 **
+
+**Segment 3:**
+*   **Visuals:**
+    *   `image5` (Shows segment path, POIs, signalized intersections)
+    *   `image6` (Illustrates road class, lanes, network structure)
+*   **Segment Stats:**
+    *   **Start Time: 2009-05-05 17:05:23 **
+    *   **End Time: 2009-05-05 17:13:38 **
+    *   **Duration (minutes): 8.25 **
+    *   **Total Distance (meters): 3457.907886570742 **
+    *   **Average Speed (m/s): 6.985672498122711 **
+    *   **Maximum Speed (m/s): 16.738323009246454 **
+    *   **Minimum Speed (m/s): 0.0 **
+    *   **Maximum Acceleration (m/s²): 2.3447462219828257 **
+
+**Segment 4:**
+*   **Visuals:**
+    *   `image7` (Shows segment path, POIs, signalized intersections)
+    *   `image8` (Illustrates road class, lanes, network structure)
+*   **Segment Stats:**
+    *   **Start Time: 2009-05-05 17:13:44 **
+    *   **End Time: 2009-05-05 17:22:27 **
+    *   **Duration (minutes): 8.72 **
+    *   **Total Distance (meters): 4444.283500458305 **
+    *   **Average Speed (m/s): 8.497673997052209 **
+    *   **Maximum Speed (m/s): 17.353859553327833 **
+    *   **Minimum Speed (m/s): 0.0 **
+    *   **Maximum Acceleration (m/s²): 1.3637900753409842 **
+
+
+            ---
+
+        **Overall Trajectory Visuals:**
+        * **Visuals:**
+            * `poi_full_image` (Comprehensive view of the entire trajectory with POIs and signalized intersections)
+            * `road_structure_full_image` (Detailed illustration of the full trajectory's road class, lanes, and network structure)
+        

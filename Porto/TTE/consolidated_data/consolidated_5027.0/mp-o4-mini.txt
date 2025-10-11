@@ -1,0 +1,13 @@
+Analysis:
+1. From the close‐in view we see the green trajectory ending on a short spur 4734 that dead‐ends at a T‐junction. 4734 does not continue; the only forward branches are onto 5280 (northward) or onto 5279 (westward).
+2. The last five points have a northwest bearing and stable speed, indicating the vehicle will make only a slight left‐hand turn rather than a sharp right. 5280 is aligned with that northwest vector, so is by far the most likely continuation.
+3. No other straight‐through option exists on 4734, and U-turns or reversing back onto 4733/5266 are much less probable.
+4. For runner‐up alternatives within the next few samples:
+   - 5279: the other immediate branch at the T‐junction (sharp right).
+   - 5273: the next segment northbound if it does go onto 5280 and then continues.
+   - 5289: small branch off 5280 one intersection past the current junction.
+   - 5277: another residential spur reachable off 5280 shortly thereafter.
+   - 5266: represents the unlikely U-turn/backtrack onto the previous road.
+
+Top-1 prediction: <<<5280>>>
+Top-5 candidates: [[[5279,5273,5289,5277,5266]]]

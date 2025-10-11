@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trajectory Downstream Task Display System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .monospace {
+            font-family: 'Courier New', Consolas, Monaco, 'Lucida Console', monospace;
+            font-weight: bold;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .header h1 {
+            margin: 10px 0;
+            font-size: 24px; /* 原来默认是32px左右 */
+        }
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        .control-group {
+            flex: 1;
+            min-width: 180px;
+        }
+        .control-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        .control-group select, .control-group button {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .control-group button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        .control-group button:hover {
+            background-color: #0056b3;
+        }
+        .control-group button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        .main-content {
+            display: flex;
+            gap: 20px;
+            height: 700px; /* 固定合理高度 */
+        }
+        .left-panel, .right-panel {
+            flex: 0 0 25%; /* 左右两侧各占25%宽度 */
+        }
+        .middle-panel {
+            flex: 1; /* 中间占剩余的50%宽度 */
+        }
+        .section {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .section-header {
+            padding: 15px 20px;
+            border-bottom: 1px solid #ddd;
+            background-color: #f8f9fa;
+            border-radius: 8px 8px 0 0;
+        }
+        .section-header h3 {
+            margin: 0;
+            color: #333;
+            font-size: 18px;
+        }
+        .section-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        /* Scrollbar styling */
+        .section-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .section-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .section-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        .section-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .prompt-controls, .context-controls {
+            margin-bottom: 15px;
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 10;
+            padding-bottom: 10px;
+        }
+        .prompt-controls select, .context-controls select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .prompt-content {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        .output-content {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        /* Image carousel styles */
+        .image-carousel {
+            position: relative;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .carousel-header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .carousel-content {
+            position: relative;
+            height: 500px; /* 固定高度 */
+        }
+        .carousel-slide {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .carousel-slide.active {
+            display: flex;
+        }
+        .carousel-slide img {
+            max-width: 100%;
+            max-height: 250px; /* 限制图片最大高度 */
+            object-fit: contain;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+        .carousel-slide img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .carousel-slide h4 {
+            margin: 15px 0 10px 0;
+            color: #333;
+            font-size: 16px;
+        }
+        .carousel-slide p {
+            margin: 10px 0;
+            color: #666;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .carousel-navigation {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 123, 255, 0.8);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        .carousel-navigation:hover {
+            background-color: rgba(0, 123, 255, 1);
+        }
+        .carousel-navigation:disabled {
+            background-color: rgba(108, 117, 125, 0.5);
+            cursor: not-allowed;
+        }
+        .carousel-prev {
+            left: 10px;
+        }
+        .carousel-next {
+            right: 10px;
+        }
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 15px;
+            background-color: rgba(248, 249, 250, 0.9);
+        }
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .carousel-indicator.active {
+            background-color: #007bff;
+        }
+        .carousel-counter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        /* Global view styles */
+        .global-view {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .global-view h4 {
+            margin: 0 0 15px 0;
+            color: #333;
+            font-size: 16px;
+        }
+        .global-view img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #007bff, transparent);
+            margin: 30px 0;
+        }
+
+        .placeholder {
+            color: #999;
+            font-style: italic;
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f8f9fa;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+        }
+
+        /* Animation for slide transitions */
+        .carousel-slide {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            .main-content {
+                flex-direction: column;
+                height: auto;
+            }
+            .left-panel, .middle-panel, .right-panel {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><span class="monospace">Traj-MLLM</span> Task Display System</h1>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="dataset-select">Dataset</label>
+                <select id="dataset-select">
+                    <option value="">Please select dataset</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="trajectory-select">Trajectory ID</label>
+                <select id="trajectory-select">
+                    <option value="">Please select dataset first</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="task-select">Downstream Task</label>
+                <select id="task-select">
+                    <option value="">Please select trajectory first</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>&nbsp;</label>
+                <button id="load-data-btn" disabled>Load Trajectory Data</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Left Panel: Input Text Prompt -->
+            <div class="left-panel">
+                <div class="section">
+                    <div class="section-header">
+                        <h3>Input Text Prompt</h3>
+                    </div>
+                    <div class="section-content">
+                        <div class="prompt-controls">
+                            <select id="prompt-type-select">
+                                <option value="">Please select prompt type</option>
+                                <option value="system">System Prompt</option>
+                                <option value="user">User Prompt</option>
+                            </select>
+                        </div>
+                        <div class="prompt-content" id="prompt-content">
+                            <div class="placeholder">Please select trajectory, task and load data</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Panel: Image Display -->
+            <div class="middle-panel">
+                <div class="section">
+                    <div class="section-header">
+                        <h3>Image Display</h3>
+                    </div>
+                    <div class="section-content">
+                        <div class="context-controls">
+                            <select id="contextual-type-select">
+                                <option value="">Please select contextual type</option>
+                                <option value="POI">POI</option>
+                                <option value="Road network">Road network</option>
+                            </select>
+                        </div>
+                        <div id="image-display">
+                            <div class="placeholder">Please select trajectory and load data</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: LLM Output Results -->
+            <div class="right-panel">
+                <div class="section">
+                    <div class="section-header">
+                        <h3>LLM Output Results</h3>
+                    </div>
+                    <div class="section-content">
+                        <div class="output-content" id="output-content">
+                            <div class="placeholder">Please select trajectory and load data</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentData = {
+            dataset: '',
+            trajectory: '',
+            task: '',
+            contextual_type: '',
+            prompts: {},
+            trajectory_data: {},
+            currentSlide: 0,
+            totalSlides: 0
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDatasets();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            document.getElementById('dataset-select').addEventListener('change', onDatasetChange);
+            document.getElementById('trajectory-select').addEventListener('change', onTrajectoryChange);
+            document.getElementById('task-select').addEventListener('change', onTaskChange);
+            document.getElementById('load-data-btn').addEventListener('click', loadTrajectoryData);
+            document.getElementById('prompt-type-select').addEventListener('change', onPromptTypeChange);
+            document.getElementById('contextual-type-select').addEventListener('change', onContextTypeChange);
+        }
+
+        async function loadDatasets() {
+            try {
+                const response = await fetch('/api/datasets');
+                const datasets = await response.json();
+
+                const select = document.getElementById('dataset-select');
+                select.innerHTML = '<option value="">Please select dataset</option>';
+
+                datasets.forEach(dataset => {
+                    const option = document.createElement('option');
+                    option.value = dataset;
+                    option.textContent = dataset;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading datasets:', error);
+            }
+        }
+
+        async function onDatasetChange() {
+            const dataset = document.getElementById('dataset-select').value;
+            currentData.dataset = dataset;
+
+            // Reset other selections
+            resetTrajectorySelect();
+            resetTaskSelect();
+            resetData();
+
+            if (dataset) {
+                await loadTrajectories(dataset);
+            }
+        }
+
+        async function loadTrajectories(dataset) {
+            try {
+                const response = await fetch(`/api/trajectories?dataset=${dataset}`);
+                const trajectories = await response.json();
+
+                const select = document.getElementById('trajectory-select');
+                select.innerHTML = '<option value="">Please select trajectory</option>';
+
+                trajectories.forEach(trajectory => {
+                    const option = document.createElement('option');
+                    option.value = trajectory.id;
+                    option.textContent = trajectory.id;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading trajectories:', error);
+            }
+        }
+
+        async function onTrajectoryChange() {
+            const trajectoryId = document.getElementById('trajectory-select').value;
+            currentData.trajectory = trajectoryId;
+
+            // Reset task selection
+            resetTaskSelect();
+            resetData();
+
+            if (trajectoryId && currentData.dataset) {
+                await loadTasks(currentData.dataset, trajectoryId);
+            }
+        }
+
+        async function loadTasks(dataset, trajectoryId) {
+            try {
+                const response = await fetch(`/api/tasks?dataset=${dataset}&trajectory_id=${trajectoryId}`);
+                const tasks = await response.json();
+
+                const select = document.getElementById('task-select');
+                select.innerHTML = '<option value="">Please select task</option>';
+
+                tasks.forEach(task => {
+                    const option = document.createElement('option');
+                    option.value = task;
+                    option.textContent = task;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading tasks:', error);
+            }
+        }
+
+        function onTaskChange() {
+            const task = document.getElementById('task-select').value;
+            currentData.task = task;
+
+            // Update load button state
+            updateLoadButton();
+            resetData();
+        }
+
+        function updateLoadButton() {
+            const btn = document.getElementById('load-data-btn');
+            const canLoad = currentData.dataset && currentData.trajectory && currentData.task;
+            btn.disabled = !canLoad;
+        }
+
+        async function loadTrajectoryData() {
+            if (!currentData.dataset || !currentData.trajectory || !currentData.task) {
+                alert('Please select dataset, trajectory and task first');
+                return;
+            }
+
+            try {
+                // Load prompts
+                const promptResponse = await fetch(`/api/prompts?dataset=${currentData.dataset}&trajectory_id=${currentData.trajectory}&task=${currentData.task}`);
+                const prompts = await promptResponse.json();
+                currentData.prompts = prompts;
+
+                // Load output
+                const outputResponse = await fetch(`/api/output?dataset=${currentData.dataset}&trajectory_id=${currentData.trajectory}&task=${currentData.task}`);
+                const output = await outputResponse.json();
+
+                // Update UI
+                displayPrompts();
+                displayOutput(output);
+
+                // Enable contextual type selection
+                document.getElementById('contextual-type-select').disabled = false;
+
+            } catch (error) {
+                console.error('Error loading trajectory data:', error);
+                alert('Error occurred while loading data');
+            }
+        }
+
+        async function onContextTypeChange() {
+            const contextType = document.getElementById('contextual-type-select').value;
+            currentData.contextual_type = contextType;
+
+            if (contextType && currentData.dataset && currentData.trajectory && currentData.task) {
+                try {
+                    const dataResponse = await fetch(`/api/trajectory-data?dataset=${currentData.dataset}&trajectory_id=${currentData.trajectory}&task=${currentData.task}&contextual_type=${contextType}`);
+                    const data = await dataResponse.json();
+                    currentData.trajectory_data = data;
+
+                    displayImages(data, contextType);
+                } catch (error) {
+                    console.error('Error loading trajectory images:', error);
+                }
+            }
+        }
+
+        function displayImages(data, contextType) {
+            const container = document.getElementById('image-display');
+
+            if (!data || (!data.global_images && !data.segment_images)) {
+                container.innerHTML = '<div class="placeholder">No image data available</div>';
+                return;
+            }
+
+            let html = '';
+
+            // Global view
+            if (data.global_images && data.global_images.length > 0) {
+                html += '<div class="global-view">';
+                html += '<h4>Global View</h4>';
+                data.global_images.forEach(imageName => {
+                    const imageUrl = `/api/image/${currentData.dataset}/${currentData.trajectory}/${currentData.task}/${imageName}`;
+                    html += `<img src="${imageUrl}" alt="${imageName}" onerror="this.style.display='none'">`;
+                });
+                html += '</div>';
+
+                if ((data.segment_images && data.segment_images.length > 0) ||
+                    (data.last_trajectory_images && data.last_trajectory_images.length > 0)) {
+                    html += '<div class="divider"></div>';
+                }
+            }
+
+            // Segment carousel
+            const allSegmentImages = [];
+            if (data.segment_images) {
+                allSegmentImages.push(...data.segment_images);
+            }
+            if (contextType === 'Road network' && data.last_trajectory_images) {
+                allSegmentImages.push(...data.last_trajectory_images);
+            }
+
+            if (allSegmentImages.length > 0) {
+                const segmentCount = data.segment_images ? data.segment_images.length : 0;
+                const lastTrajCount = (contextType === 'Road network' && data.last_trajectory_images) ? data.last_trajectory_images.length : 0;
+
+                let carouselTitle = 'Segment View';
+                if (contextType === 'Road network' && lastTrajCount > 0) {
+                    carouselTitle = `Local View (${segmentCount} segments + final road network info)`;
+                } else {
+                    carouselTitle = `Local View (${segmentCount} segments)`;
+                }
+
+                html += createImageCarousel(allSegmentImages, carouselTitle);
+            }
+
+            if (html === '') {
+                container.innerHTML = '<div class="placeholder">No image data available</div>';
+            } else {
+                container.innerHTML = html;
+                initializeCarousel();
+            }
+        }
+
+        function createImageCarousel(images, title) {
+            currentData.totalSlides = images.length;
+            currentData.currentSlide = 0;
+
+            let html = `
+                <div class="image-carousel">
+                    <div class="carousel-header">${title}</div>
+                    <div class="carousel-content">
+                        <div class="carousel-counter">
+                            <span id="current-slide">1</span> / <span id="total-slides">${images.length}</span>
+                        </div>
+            `;
+
+            // Create slides
+            images.forEach((item, index) => {
+                const imageUrl = `/api/image/${currentData.dataset}/${currentData.trajectory}/${currentData.task}/${item.filename}`;
+                const isActive = index === 0 ? 'active' : '';
+
+                html += `
+                    <div class="carousel-slide ${isActive}">
+                        <img src="${imageUrl}" alt="${item.filename}" onerror="this.style.display='none'">
+                        <p>${item.label}</p>
+                    </div>
+                `;
+            });
+
+            // Navigation buttons
+            html += `
+                        <button class="carousel-navigation carousel-prev" onclick="previousSlide()">‹</button>
+                        <button class="carousel-navigation carousel-next" onclick="nextSlide()">›</button>
+                    </div>
+                    <div class="carousel-indicators">
+            `;
+
+            // Create indicators
+            for (let i = 0; i < images.length; i++) {
+                const isActive = i === 0 ? 'active' : '';
+                html += `<div class="carousel-indicator ${isActive}" onclick="goToSlide(${i})"></div>`;
+            }
+
+            html += `
+                    </div>
+                </div>
+            `;
+
+            return html;
+        }
+
+        function initializeCarousel() {
+            updateCarouselNavigation();
+        }
+
+        function updateCarouselNavigation() {
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            const currentSlideSpan = document.getElementById('current-slide');
+
+            if (prevBtn) prevBtn.disabled = currentData.currentSlide === 0;
+            if (nextBtn) nextBtn.disabled = currentData.currentSlide === currentData.totalSlides - 1;
+            if (currentSlideSpan) currentSlideSpan.textContent = currentData.currentSlide + 1;
+        }
+
+        function previousSlide() {
+            if (currentData.currentSlide > 0) {
+                goToSlide(currentData.currentSlide - 1);
+            }
+        }
+
+        function nextSlide() {
+            if (currentData.currentSlide < currentData.totalSlides - 1) {
+                goToSlide(currentData.currentSlide + 1);
+            }
+        }
+
+        function goToSlide(slideIndex) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+
+            // Remove active class from current slide and indicator
+            if (slides[currentData.currentSlide]) {
+                slides[currentData.currentSlide].classList.remove('active');
+            }
+            if (indicators[currentData.currentSlide]) {
+                indicators[currentData.currentSlide].classList.remove('active');
+            }
+
+            // Update current slide index
+            currentData.currentSlide = slideIndex;
+
+            // Add active class to new slide and indicator
+            if (slides[currentData.currentSlide]) {
+                slides[currentData.currentSlide].classList.add('active');
+            }
+            if (indicators[currentData.currentSlide]) {
+                indicators[currentData.currentSlide].classList.add('active');
+            }
+
+            updateCarouselNavigation();
+        }
+
+        function displayPrompts() {
+            // Reset prompt type selection
+            const promptTypeSelect = document.getElementById('prompt-type-select');
+            promptTypeSelect.innerHTML = '<option value="">Please select prompt type</option>';
+
+            if (currentData.prompts.system_prompt) {
+                const option = document.createElement('option');
+                option.value = 'system';
+                option.textContent = 'System Prompt';
+                promptTypeSelect.appendChild(option);
+            }
+
+            if (currentData.prompts.user_prompt) {
+                const option = document.createElement('option');
+                option.value = 'user';
+                option.textContent = 'User Prompt';
+                promptTypeSelect.appendChild(option);
+            }
+
+            // Clear prompt content
+            document.getElementById('prompt-content').innerHTML = '<div class="placeholder">Please select prompt type</div>';
+        }
+
+        function onPromptTypeChange() {
+            const promptType = document.getElementById('prompt-type-select').value;
+            const promptContent = document.getElementById('prompt-content');
+
+            if (promptType === 'system' && currentData.prompts.system_prompt) {
+                promptContent.textContent = currentData.prompts.system_prompt;
+            } else if (promptType === 'user' && currentData.prompts.user_prompt) {
+                promptContent.textContent = currentData.prompts.user_prompt;
+            } else {
+                promptContent.innerHTML = '<div class="placeholder">No prompt available for this type</div>';
+            }
+        }
+
+        function displayOutput(output) {
+            const outputContainer = document.getElementById('output-content');
+            if (output.output) {
+                outputContainer.textContent = output.output;
+            } else {
+                outputContainer.innerHTML = '<div class="placeholder">No output results available</div>';
+            }
+        }
+
+        function resetTrajectorySelect() {
+            const select = document.getElementById('trajectory-select');
+            select.innerHTML = '<option value="">Please select dataset first</option>';
+            currentData.trajectory = '';
+        }
+
+        function resetTaskSelect() {
+            const select = document.getElementById('task-select');
+            select.innerHTML = '<option value="">Please select trajectory first</option>';
+            currentData.task = '';
+            updateLoadButton();
+        }
+
+        function resetData() {
+            // Reset all display content
+            document.getElementById('image-display').innerHTML = '<div class="placeholder">Please select trajectory and load data</div>';
+            document.getElementById('output-content').innerHTML = '<div class="placeholder">Please select trajectory and load data</div>';
+            document.getElementById('prompt-content').innerHTML = '<div class="placeholder">Please select trajectory, task and load data</div>';
+            document.getElementById('prompt-type-select').innerHTML = '<option value="">Please select prompt type</option>';
+            document.getElementById('contextual-type-select').innerHTML = '<option value="">Please select contextual type</option><option value="POI">POI</option><option value="Road network">Road network</option>';
+            document.getElementById('contextual-type-select').disabled = true;
+
+            currentData.prompts = {};
+            currentData.trajectory_data = {};
+            currentData.contextual_type = '';
+            currentData.currentSlide = 0;
+            currentData.totalSlides = 0;
+        }
+
+        // Keyboard navigation for carousel
+        document.addEventListener('keydown', function(e) {
+            if (currentData.totalSlides > 0) {
+                if (e.key === 'ArrowLeft') {
+                    previousSlide();
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Relevant trajectory information:
+- Last 5 points direction: Northeast (bearing: 40.70°)
+- Last 10 points speed trend: accelerating
+
+- Road segment ID for the last points: 104997

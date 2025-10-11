@@ -1,0 +1,9 @@
+Analysis:
+1. From all three zoom levels, the vehicle is on the north–south trunk (current segment 2394) and heading northeast (bearing ≈29°) toward the next signalised intersection.
+2. The most direct continuation of that motion is straight through the intersection onto the northward segment labelled 61847.
+3. Right-turn and left-turn options at this intersection are onto segment 61846 (eastbound) and segment 47277 (westbound), respectively.
+4. A U-turn or a hard-brake-and-reverse would re-enter the southbound segment back onto 2394/87096.
+5. There are no other obvious forks at this node—so our five runner-up hypotheses are the current segment (2394), the right-turn (61846), the left-turn (47277), the southbound backtrack (87096), and sticking on the same ID across the intersection if 2394 were continuous (effectively 61847 again).
+
+Top-1 prediction: <<<61847>>>
+Top-5 candidates: [[[2394,61846,47277,87096,61847]]]

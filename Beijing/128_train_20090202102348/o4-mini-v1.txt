@@ -1,0 +1,7 @@
+Reasoning:
+* All segments show very high, nearly constant speeds (avg ~25–27 m/s, 90–100 km/h) with very small speed variation and no stops (min speeds ~24 m/s), ruling out walk, bike, and typical bus operation (which has stops and greater speed fluctuation).
+* Maximum accelerations are very low (<0.3 m/s²), indicating smooth, sustained motion rather than car or bus dynamics.
+* In each POI & Route Detail Map, the red trajectory line consistently overlaps the black dashed lines marked as railway tracks, not the adjacent highway (G238).
+* The route is linear and uninterrupted (no signalized intersections or lane changes), matching a train’s right-of-way rather than a highway.
+
+<<<train>>>

@@ -1,0 +1,84 @@
+Below is a detailed, segment‐by‐segment breakdown of our analysis and predicted times, followed by the final ETA for the entire trajectory.
+
+Segment 1  
+Start time: 2016-11-24 22:12:03  
+Distance: 2 963.72 m  
+a. Influencing factors  
+- Road characteristics  
+  • Running on the 北三环路二段辅道, a service road with a total of four lanes, median-separated. The posted speed limit is 60 km/h.  
+- Traffic flow (22:12, late‐night off-peak)  
+  • Very light; road is mostly free-flow. A realistic travel speed is about 80% of the speed limit, around 50 km/h (13.9 m/s).  
+- Signals  
+  • Three at-grade crossings (mainly minor ramp terminals and a mid-segment intersection).  
+  • Each signal’s comprehensive delay (including deceleration/acceleration) is about 8 s at this hour.  
+b. Predicted travel time (seconds)  
+  Running time = 2 963.72 m ÷ 13.9 m/s ≈ 213 s  
+  + 3 × 8 s = 24 s  
+  = 237 s  
+c. Predicted average speed  
+  2 963.72 m ÷ 237 s ≈ 12.51 m/s (≈45 km/h)  
+d. Segment 1 ETA  
+  22:12:03 + 237 s = 22:16:00  
+
+–––  
+Segment 2  
+Start time: 22:16:00  
+Distance: 4 603.50 m  
+a. Influencing factors  
+- Road characteristics  
+  • Service road alongside a north–south elevated arterial, two lanes in each direction, speed limit 50 km/h.  
+- Traffic flow (22:16, still late-night)  
+  • Light, but with relatively straightforward flows between signal cycles. A slightly higher average moving speed (around 85% of speed limit, ≈42 km/h) is realistic for this segment.  
+- Signals  
+  • Six cross-streets or ramp terminals, each with typical off-peak signal delay of about 12 s.  
+b. Predicted travel time (seconds)  
+  Running time = 4 603.50 m ÷ (42 km/h → 11.67 m/s) ≈ 394 s  
+  + 6 × 12 s = 72 s  
+  = 466 s  
+c. Predicted average speed  
+  4 603.50 m ÷ 466 s ≈ 9.88 m/s (≈35.6 km/h)  
+d. Segment 2 ETA  
+  22:16:00 + 466 s = 22:23:46  
+
+–––  
+Segment 3  
+Start time: 22:23:46  
+Distance: 460.17 m  
+a. Influencing factors  
+- Road characteristics  
+  • Collector-class road (two lanes in total), speed limit 40 km.  
+- Traffic flow (22:23, late-night)  
+  • Light, local traffic only. Moving speed about 75% of limit (≈30 km/h).  
+- Signals  
+  • One at-grade end intersection, with expected minor crossing delay of about 15 s.  
+b. Predicted travel time (seconds)  
+  Running time = 460.17 m ÷ (30 km/h → 8.33 m/s) ≈ 55 s  
+  + 15 s = 70 s  
+c. Predicted average speed  
+  460.17 m ÷ 70 s ≈ 6.57 m/s (≈23.7 km/h)  
+d. Segment 3 ETA  
+  22:23:46 + 70 s = 22:24:56  
+
+–––  
+Segment 4  
+Start time: 22:24:56  
+Distance: 1 016.15 m  
+a. Influencing factors  
+- Road characteristics  
+  • Ordinary urban road (non-arterial), two lanes in each direction, speed limit 50 km/h, but with typical signal density and possible local activity.  
+- Traffic flow (22:25, still off-peak)  
+  • Light, but local contexts and signals may prevent continuous free-flow. Reasonable moving speed is 70% of limit (≈35 km/h, 9.72 m/s).  
+- Signals  
+  • Three signalized intersections along this 1 km segment, with about 13 s average delay per intersection.  
+. Predicted travel time (seconds)  
+  Running time = 1 016.15 m ÷ 9.72 m/s ≈ 104.6 s  
+  + 3 × 13 s = 39 s  
+  = 143.6 s  
+c. Predicted average speed  
+  1 016.15 m ÷ 143.6 s ≈ 7.08 m/s (≈25.5 km/h)  
+d. Segment 4 ETA  
+  22:24:56 + 144 s = 22:27:20  
+
+–––  
+Overall Trajectory Prediction  
+Final ETA for the end‐point: <<<2016-11-24 22:27:20>>>

@@ -1,0 +1,22 @@
+Analysis:
+
+1. Examination of local map (first image) shows the vehicle’s last five points progressing almost perfectly eastward along road segment 59058, with very little lateral deviation and a bearing of 90.18°. The green trace and red samples all lie on the blue‐highlighted 59058, and there are no indications (e.g. a curve or splitter) that the road itself is about to bend.
+
+2. The medium‐scale map (second image) places this stretch of 59058 between two minor side streets: one immediately to the west (segment 30265/59057 cluster around the prior intersection), and one to the east (vertical segment 29953). The next eastward continuation past the 29953 junction is labeled 30305. There are clear turn options at that forthcoming intersection:
+   - Straight onto 30305 (eastward continuation of the same roadway),
+   - Right‐turn onto the north–south 29953,
+   - (Implicit) Left‐turn onto the southbound leg of 29953.
+
+3. The large‐scale map (third image) confirms that after 59058, the most direct continuation is 30305 eastbound, and that the only two logical turn‐off candidates at the upcoming junction are onto 29953 (north or south direction). No other connected segments lie immediately ahead.
+
+4. The deceleration trend suggests the vehicle is slowing as it approaches the 29953 crossing—consistent with preparing to either stop or make a turn. However, nothing in the trajectory (no lateral shift toward an on‐ramp or turn lane) convincingly shows an imminent turn. The default “straight‐through” behavior on the same roadway is therefore the strongest single hypothesis over the next five samples.
+
+5. Therefore our Top‐1 prediction is that the object remains on the current segment (59058). The Top‐5 runner‐up segments cover the next‐most likely turn or continuation options in descending order of plausibility: 
+   – 30305 for continuing straight through onto the next eastbound segment,
+   – 29953 for turning onto the north–south road,
+   – 30292 for a more leftward northbound turn at the previous intersection (less likely given forward momentum),
+   – 59056 for the small slip lane at the prior intersection (least likely).
+
+Formatted Prediction:
+1. Top-1 prediction: <<<59058>>>
+2. Top-5 candidates: [[[30305,29953,30292,59056,30265]]]

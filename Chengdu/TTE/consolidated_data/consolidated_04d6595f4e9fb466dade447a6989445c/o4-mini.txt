@@ -1,0 +1,54 @@
+Below is the detailed, segment-by-segment analysis, followed by the consolidated ETA for the entire trajectory.
+
+1. Segment 1  
+   Start Time: 2016-11-24 08:21:08  
+   Distance: 1 090.36 m  
+   a. Influencing Factor Analysis  
+   • Road Characteristics  
+     – This is a north–south primary road with 2 lanes in total, 1 lane in each direction.  
+     – Posted speed limit is approximately 50 km/h (≈13.9 m/s).  
+   • Time-of-Day / Traffic Flow  
+     – Departure is at 08:21 on a weekday, during the morning school peak period.  
+     – The segment passes by multiple schools such as “八二幼儿园” and “石室中学”. At this time, there is significant pedestrian and vehicular traffic related to school drop-offs, leading to congestion and delays.  
+     – Moving speed is anticipated to be clearly below free-flow due to frequent crossings, school-zone activity, and general morning peak effects, in the range of 5–7 m/s.  
+   • Signal Light Impact  
+     – There are 5 signalized intersections along this segment.  
+     – During peak, cycle times are typically around 100 s, with an estimated average stop delay of 15 s per intersection for through traffic.  
+     – Total expected signal delay: 5 × 15 s = 75 s.  
+   b. Predicted Travel Time  
+     – Assume an average moving speed of 6 m/s (reflecting the school zone and congestion).  
+     – Moving time = 1 090.36 m ÷ 6 m/s ≈ 181.7 s  
+     – Plus total signal delay 75 s  
+     – → Segment 1 travel time ≈ 181.7 + 75 ≈ 256.7 s → **257 s**  
+   c. Predicted Average Speed  
+     – 1 090.36 m ÷ 257 s ≈ **4.24 m/s**  
+   d. Segment 1 ETA  
+     – 08:21:08 + 257 s = 08:25:25  
+
+2. Segment 2  
+   Start Time: 2016-11-24 08:25:25 (arrival from Segment 1)  
+   Distance: 3 257.61 m  
+   a. Influencing Factor Analysis  
+   • Road Characteristics  
+     – This is an east–west urban road, with a width of approximately 2–4 lanes in total (including both directions), and posted speed limit around 60 km/h (≈16.7 m/s). It does not have the density or trunk designation of a major arterial, but allows for moderate flow when not encountering intersections or left-turning queues.  
+   • Time-of-Day / Traffic Flow  
+     – The time is still within the morning peak, with some congestion persisting after clearing the school-dense segment. Flow remains affected by overall rush hour traffic; moving speeds are at moderate congestion levels.  
+     – No assumptions of “speed up” are made, as major acceleration is not typically observed on ordinary urban roads with frequent signals and moderate congestion.  
+   • Signal Light Impact  
+     – There are 7 signalized intersections on this stretch.  
+     – During peak, assume an average delay per intersection of 12 s for through traffic.  
+     – Total expected signal delay: 7 × 12 s = 84 s.  
+   b. Predicted Travel Time  
+     – Using an average moving speed of 9.5 m/s (≈34 km/h), reflecting moderate city traffic conditions and multiple intersections.  
+     – Moving time = 3 257.61 m ÷ 9.5 m/s ≈ 343.9 s  
+     – Plus total signal delay 84 s  
+     – → Segment 2 travel time ≈ 343.9 + 84 ≈ 427.9 s → **428 s**  
+   c. Predicted Average Speed  
+     – 3 257.61 m ÷ 428 s ≈ **7.61 m/s** (≈27 km/h)  
+   d. Segment 2 ETA  
+     – 08:25:25 + 428 s = 08:32:33  
+
+3. Overall Trajectory Prediction  
+   – Final ETA for the two-segment journey: <<<2016-11-24 08:32:33>>>  
+
+All times and speeds reflect morning peak school activity, realistic urban road cross-section and density, intersection delays, and general rush-hour flow, without unfounded assumptions about road width or POI-related congestion mapping.

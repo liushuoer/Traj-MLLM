@@ -1,0 +1,13 @@
+Final Judgment: Abnormal
+
+Reasoning:
+1. Overall Assessment  
+   - Most of the trajectory (the long, straight portions) follows the main north–south expressway and then the east–west Ring Road, matching the blue road network with only minor GPS jitter.  
+
+2. Evidence Analysis  
+   - Zoomed Insets (fifth and sixth images): There is a distinct segment where the green trajectory line departs the blue-lined roads. Instead of staying on the service road or slip-road parallel to the expressway, the trajectory veers sharply southwest into a grid of side-streets, makes a triangular loop through an area with no corresponding through-road, and then jumps back to the main expressway corridor.  
+   - This “zig-zag” path cuts across building blocks and open parcels—an area with no continuous blue road link—indicating a geometric translation error rather than actual vehicle motion.  
+   - Contrast with other segments (first through fourth images): The green line tightly hugs the blue expressway lanes and on‐ramps, showing correct map‐matching elsewhere.
+
+3. Conclusion  
+   - The isolated, offset loop through non-existent roads is a clear shifted segment anomaly. The trajectory cannot be normal given this geometric inconsistency.

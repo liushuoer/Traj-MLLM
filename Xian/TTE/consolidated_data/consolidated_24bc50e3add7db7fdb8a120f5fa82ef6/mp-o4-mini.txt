@@ -1,0 +1,19 @@
+Analysis:
+
+- Observed trajectory and map alignment  
+  - The last five sampled points (red dots) lie on the long, straight east–west segment labelled 40247, heading nearly due east (bearing ≈ 90°).  
+  - The vehicle is accelerating and shows no lateral deviation in the final part of the observed green trajectory, indicating it will most likely continue straight.  
+  - There is an upcoming curve at the east end of 40247, but this curve is part of the same road alignment; there are no competing major junctions or left/right turn options at the current position.  
+
+- Road network context  
+  - West of the current location is the T-junction with the north–south road (possible ID 40246) which the vehicle has already passed.  
+  - East of the current location the road (40247) eventually curves north; that curved piece is likely a separate segment (e.g. 40248), followed by another straight segment (e.g. 40249).  
+  - Minor side roads or service lanes (e.g. south-branch or small north-branch) are possible but far less likely given straight, accelerating motion.  
+
+- Prediction rationale  
+  - Because the vehicle remains on a long, uninterrupted segment and is accelerating eastbound, the most probable continuation in five sampling intervals is to remain on segment 40247.  
+  - Alternate but less likely continuations include entering the immediate curve segment (candidate ID ~40248), continuing onto the next straight piece (~40249), or turning off onto minor roads (~40250, 40251, 40252).  
+
+Formatted prediction:
+1. Top-1 prediction: <<<40247>>>
+2. Top-5 candidates: [[[40248,40249,40250,40251,40252]]]

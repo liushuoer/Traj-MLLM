@@ -1,0 +1,6 @@
+Reasoning:
+* Across all segments the maximum speeds (up to ~11 m/s) and average speeds (1.8–4.2 m/s) are far above typical walking/running limits but well below car/train speeds in urban areas.
+* The peak accelerations (~3 m/s²) match the upper bound for a bike (3 m/s²) and are higher than would be expected for a bus (≤2 m/s²).
+* The trajectory weaves through narrow campus‐style roads and makes frequent stops at signalized intersections—behavior consistent with cycling rather than driving.
+* On the POI & Route Detail Maps the red line follows the roadway edges (often where bike lanes would sit) and does not overlap railway tracks or dedicated bus lanes.
+<<<bike>>>

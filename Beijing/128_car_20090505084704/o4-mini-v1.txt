@@ -1,0 +1,6 @@
+Reasoning:
+* Segment 1 travels on signalized urban streets at ~12 km/h (max ~64 km/h) with stops at intersections—typical of a road vehicle, not rail.
+* Segment 2 speeds jump to a max ~110 km/h (exceeding bus acceleration limits of 2 m/s²) on an expressway, ruling out walk, bike, and bus.
+* Segments 3–4 exit ramps and city arterials with variable speeds (25–30 km/h) and turns into campus roads—trajectory matches a car dropping off, not a train.
+
+<<<car>>>
