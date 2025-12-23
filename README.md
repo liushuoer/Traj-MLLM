@@ -1,6 +1,6 @@
 # Traj-MLLM
 
-This repository contains code and data for 《TrajMLLM: Can Multimodal Large Language Models Reform Trajectory Data Mining?》
+This repository contains code and data for 《TrajMLLM: Can Multimodal Large Language Models Reform Trajectory Data Mining?》, which has been accepted by KDD'26. [arXiv](https://arxiv.org/html/2509.00053v1)
 
 ## 🔄 Latest Updates
 
