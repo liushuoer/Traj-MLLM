@@ -125,3 +125,7 @@ The evaluation module provides comprehensive assessment of MLLM performance acro
 ## 🤝 Contributing
 
 Feel free to submit issues and enhancement requests!
+
+## License
+
+This project uses data from OpenStreetMap which is available under the Open Database License (ODbL). Any modifications to the data also adhere to this license. See [LICENSE](./LICENSE.txt) for more details.
